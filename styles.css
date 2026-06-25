@@ -161,13 +161,27 @@ nav a:hover { color: var(--white); }
 }
 
 h1 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
   margin: 0;
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(36px, 5vw, 58px);
   font-weight: 900;
   line-height: 1.08;
   color: var(--ink);
+  -webkit-text-fill-color: var(--ink);
   max-width: 14ch;
+}
+
+h1 span {
+  color: var(--ink);
+  -webkit-text-fill-color: var(--ink);
+}
+
+.headline-mark {
+  font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 900;
 }
 
 .rule {
@@ -276,40 +290,12 @@ h2 {
 
 .dipg-inner {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 760px);
   gap: clamp(36px, 6vw, 80px);
   align-items: start;
+  justify-content: center;
   max-width: var(--content-max);
   margin: 0 auto;
-}
-
-.dipg-stat-col {
-  padding-right: 32px;
-  border-right: 1px solid #3d3b38;
-}
-
-.stat-number {
-  margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 72px;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--amber);
-}
-
-.stat-label {
-  margin: 8px 0 16px;
-  color: #b0aca4;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.stat-note {
-  margin: 0;
-  color: #706c65;
-  font-size: 13px;
-  line-height: 1.5;
 }
 
 .dipg-text-col h2 { color: var(--white); }
@@ -424,19 +410,6 @@ footer {
   .dipg-inner {
     grid-template-columns: 1fr;
   }
-
-  .dipg-stat-col {
-    border-right: none;
-    border-bottom: 1px solid #3d3b38;
-    padding-right: 0;
-    padding-bottom: 28px;
-    display: flex;
-    gap: 20px;
-    align-items: baseline;
-  }
-
-  .stat-label { margin: 0; }
-  .stat-note { display: none; }
 
   .give-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
