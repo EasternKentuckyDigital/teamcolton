@@ -20,7 +20,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--white);
   color: var(--ink);
   font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
   font-size: 17px;
@@ -28,6 +28,10 @@ body {
 }
 
 a { color: inherit; }
+
+main {
+  background: var(--white);
+}
 
 /* ── TOP RIBBON ──────────────────────────────────────── */
 .top-ribbon {
@@ -71,12 +75,6 @@ a { color: inherit; }
   gap: 14px;
   color: var(--white);
   text-decoration: none;
-}
-
-.brand img {
-  width: 48px;
-  height: 42px;
-  object-fit: contain;
 }
 
 .brand-text {
@@ -149,6 +147,12 @@ nav a:hover { color: var(--white); }
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.hero-logo {
+  width: 128px;
+  height: auto;
+  margin-bottom: 28px;
 }
 
 .label {
