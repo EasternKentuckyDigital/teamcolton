@@ -119,10 +119,10 @@ nav a:hover { color: var(--white); }
 /* ── HERO ────────────────────────────────────────────── */
 .hero {
   display: grid;
-  grid-template-columns: minmax(320px, 450px) minmax(360px, 560px);
+  grid-template-columns: minmax(320px, 450px) minmax(520px, 660px);
   justify-content: center;
   align-items: center;
-  gap: clamp(48px, 7vw, 92px);
+  gap: clamp(44px, 6vw, 72px);
   width: 100%;
   min-height: 0;
   margin: 0;
@@ -148,16 +148,24 @@ nav a:hover { color: var(--white); }
 .hero-text-col {
   padding: clamp(36px, 5vw, 62px) 0;
   background: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 176px;
+  column-gap: clamp(26px, 3vw, 38px);
+  align-items: center;
+  align-content: center;
 }
 
 .hero-logo {
-  align-self: center;
-  width: 112px;
+  grid-column: 2;
+  grid-row: 1 / span 5;
+  justify-self: center;
+  width: 176px;
   height: auto;
-  margin: 0 auto 30px;
+  margin: 0;
+}
+
+.hero-text-col > :not(.hero-logo) {
+  grid-column: 1;
 }
 
 .label {
@@ -172,7 +180,7 @@ nav a:hover { color: var(--white); }
 h1 {
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin: 0;
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(36px, 5vw, 58px);
@@ -180,7 +188,8 @@ h1 {
   line-height: 1.08;
   color: var(--ink);
   -webkit-text-fill-color: var(--ink);
-  max-width: 14ch;
+  max-width: none;
+  white-space: nowrap;
 }
 
 h1 span {
@@ -446,7 +455,21 @@ footer {
   }
 
   .hero-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: clamp(48px, 7vw, 90px) clamp(32px, 5vw, 72px);
+  }
+
+  .hero-logo {
+    align-self: center;
+    width: 112px;
+    margin: 0 auto 30px;
+  }
+
+  h1 {
+    flex-wrap: wrap;
+    white-space: normal;
   }
 }
 
